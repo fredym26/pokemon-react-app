@@ -37,13 +37,13 @@ function Tabla() {
     const details = await res.json();
     setSelectedPokemon(details);
     setVisible(true);
-    setAbilityEffect(null);   
+    setAbilityEffect(null);
   };
 
-   const handleAbilityClick = async (url: string) => {
+  const handleAbilityClick = async (url: string) => {
     const res = await fetch(url);
     const abilityDetails = await res.json();
-   
+
     const effect = abilityDetails.effect_entries.find(
       (entry: any) => entry.language.name === "en",
     )?.effect;
@@ -53,9 +53,9 @@ function Tabla() {
   return (
     <div className="bg-blue shadow-lg rounded-lg p-2">
       <DataTable
-        value={data?.results}        
+        value={data?.results}
         paginator
-        rows={10}      
+        rows={10}
         filters={filters}
         onFilter={(e) => setFilters(e.filters)}
         filterDisplay="row"
@@ -75,7 +75,7 @@ function Tabla() {
             <InputText
               className="pl-[10px]"
               style={{ width: "100%" }}
-              value={filters["name"]?.value || ""}
+              value={(filters["name"] as any)?.value || ""}
               onChange={(e) =>
                 setFilters({
                   ...filters,
@@ -108,19 +108,20 @@ function Tabla() {
               {selectedPokemon.types.map((t: any) => t.type.name).join(", ")}
             </p>
             <p>
-              <strong className="text-red-600">Peso:</strong> {selectedPokemon.weight}
+              <strong className="text-red-600">Peso:</strong>{" "}
+              {selectedPokemon.weight}
             </p>
             <p>
               <strong className="text-red-600">Habilidades</strong>{" "}
               {selectedPokemon.abilities.map((a: any) => (
                 <div className="flex space-x-2 mt-2">
-                <button
-                  key={a.ability.name}
-                  className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
-                  onClick={() => handleAbilityClick(a.ability.url)}
-                >
-                  {a.ability.name}
-                </button>
+                  <button
+                    key={a.ability.name}
+                    className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
+                    onClick={() => handleAbilityClick(a.ability.url)}
+                  >
+                    {a.ability.name}
+                  </button>
                 </div>
               ))}
             </p>
