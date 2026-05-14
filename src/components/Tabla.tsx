@@ -74,7 +74,7 @@ function Tabla() {
           filterElement={
             <InputText
               className="pl-[10px]"
-              style={{ width: "170px" }}
+              style={{ width: "130px" }}
               value={(filters["name"] as any)?.value || ""}
               onChange={(e) =>
                 setFilters({
@@ -82,7 +82,7 @@ function Tabla() {
                   name: { value: e.target.value, matchMode: "contains" },
                 })
               }
-              placeholder="Buscar por nombre"
+              placeholder="Buscar nombre"
             />
           }
         />
