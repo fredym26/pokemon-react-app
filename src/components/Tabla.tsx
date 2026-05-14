@@ -74,7 +74,7 @@ function Tabla() {
           filterElement={
             <InputText
               className="pl-[10px]"
-              style={{ width: "100%" }}
+              style={{ width: "170px" }}
               value={(filters["name"] as any)?.value || ""}
               onChange={(e) =>
                 setFilters({
