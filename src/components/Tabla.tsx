@@ -98,7 +98,7 @@ function Tabla() {
         header={selectedPokemon?.name}
         visible={visible}
         headerClassName="bg-black text-white text-xl font-bold text-center"
-        style={{ width: "30vw" }}
+        style={{ width: "50%" }}
         onHide={() => setVisible(false)}
       >
         {selectedPokemon && (
