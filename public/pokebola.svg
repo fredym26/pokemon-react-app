@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128">
+  <!-- Círculo exterior -->
+  <circle cx="32" cy="32" r="30" fill="white" stroke="black" stroke-width="4"/>
+  
+  <!-- Mitad superior roja -->
+  <path d="M2,32 A30,30 0 0,1 62,32 L62,32 A30,30 0 0,0 2,32 Z" fill="red" stroke="red" stroke-width="4"/>
+  
+  <!-- Línea divisoria -->
+  <line x1="2" y1="32" x2="62" y2="32" stroke="red" stroke-width="4"/>
+  
+  <!-- Círculo central -->
+  <circle cx="32" cy="32" r="8" fill="white" stroke="black" stroke-width="4"/>
+  
+  <!-- Detalle interior del círculo central -->
+  <circle cx="32" cy="32" r="4" fill="white" stroke="blue" stroke-width="2"/>
+</svg>
